@@ -1,0 +1,33 @@
+# Lean 4 build artifacts
+/build/
+/.lake/
+/lake-packages/
+/lake-manifest.json
+
+# Editor / IDE
+.vscode/
+*.olean
+*.ilean
+*.trace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# LaTeX artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.pdf
