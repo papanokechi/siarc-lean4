@@ -8,7 +8,7 @@
 **SIARC** (Safety, Invariance, And Resilient Control) is a fully mechanized
 Lean 4 + Mathlib4 framework that establishes forward invariance, exponential
 Lyapunov stability, asymptotic convergence, and approximate controllability
-for coupled semilinear parabolic PDE-ODE systems.
+for coupled semilinear parabolic PDE–ODE systems.
 
 > **Paper:** *SIARC: A Mechanized Safety–Stability–Controllability Framework
 > for Semilinear Parabolic PDE Systems in Lean 4*
@@ -18,17 +18,32 @@ for coupled semilinear parabolic PDE-ODE systems.
 
 ---
 
-## What It Proves
+## Overview
 
-Given a `MasterCertificate` and an initial state σ₀ in the safe set:
+SIARC targets semilinear parabolic systems with block-triangular coupling
+under a **small-coupling condition** |κ| · L_cross < λ_gap, ensuring that
+diagonal dissipation dominates cross-component perturbations.
 
-1. **Safety:** Trajectories remain in the safe operating envelope for all *t* ≥ 0.
-2. **Exponential decay:** *V*(σ(*t*)) ≤ *V*(σ₀) · e^{−2ωt}.
-3. **Convergence:** For any ε > 0, eventually *V*(σ(*t*)) < ε.
-4. **Controllability:** Approximate steering to any target state.
+### What It Proves
 
-All four guarantees are extracted by a single **sorry-free** capstone theorem:
-`master_certificate_summary`.
+Given a `MasterCertificate` and an initial state σ₀ in the safe set, a
+single **sorry-free capstone theorem** (`master_certificate_summary`)
+extracts all four guarantees:
+
+| # | Guarantee | Statement |
+|---|-----------|-----------|
+| 1 | **Safety** | Trajectories remain in the safe operating envelope for all *t* ≥ 0 |
+| 2 | **Exponential decay** | *V*(σ(*t*)) ≤ *V*(σ₀) · e^{−2ωt} |
+| 3 | **Convergence** | For any ε > 0, eventually *V*(σ(*t*)) < ε |
+| 4 | **Controllability** | Approximate steering to any target state |
+
+### Key Properties
+
+- **Certificate hierarchy:** SystemAxioms → SafetyCertificate → StabilityCertificate → ControllabilityCertificate → MasterCertificate
+- **Nine explicit axioms:** 6 encoding PDE physics + 3 standard functional-analysis utilities
+- **Zero sorry** in the theorem layer; 8 sorry in PDE-infrastructure placeholders
+- **20 numerical inequalities** automatically verified by Lean's decision procedures
+- **Two case studies:** thermoelastic system (3-component) + decoupled linear heat equation
 
 ---
 
@@ -60,16 +75,21 @@ lake build SIARCRelay11TrustedCore
 lake build SIARCRelay11Examples
 ```
 
+### Verify the Main Theorem
+
+Open `SIARCRelay11/Examples/Replay_MasterCertificate.lean` in VS Code
+with the Lean 4 extension. The `#check` / `#print` output confirms
+`master_certificate_summary` is sorry-free.
+
 ### Verify Auto-Checked Numerical Inequalities
 
-Open `SIARCRelay11/Examples/Example_ThermoelasticAutoVerify.lean` in
-VS Code with the Lean 4 extension. All 20 numerical inequalities are
-verified by `norm_num`, `simp`, `linarith`, and `nlinarith` — no `sorry`,
-no external axioms.
+Open `SIARCRelay11/Examples/Example_ThermoelasticAutoVerify.lean`.
+All 20 numerical inequalities are verified by `norm_num`, `simp`,
+`linarith`, and `nlinarith` — no `sorry`, no external axioms.
 
 ---
 
-## Project Structure
+## Repository Structure
 
 ```
 .
@@ -108,12 +128,16 @@ no external axioms.
 │       └── Example_PhysicalSystem.lean           User-fillable template
 │
 ├── ARTIFACT.md                            Scope, axioms, replay recipe
+├── BUILD.md                               Build instructions
+├── OVERVIEW.md                            Human-readable project summary
 ├── README.md                              This file
 ├── LICENSE                                MIT License
 └── manuscript.tex                         LaTeX manuscript source
 ```
 
-### Trusted Core vs. Untrusted Infrastructure
+---
+
+## Trusted Core vs. Untrusted Infrastructure
 
 | Zone | Files | Sorry count |
 |------|-------|-------------|
@@ -153,31 +177,14 @@ Three unused axioms were **removed** (Relay 23).
 
 ---
 
-## Examples and the Manuscript
-
-### Thermoelastic System (§6–7 of the manuscript)
-
-`Example_ThermoelasticAutoVerify.lean` demonstrates the full SIARC pipeline:
-- `autoParams` — automatic parameter construction
-- `autoMasterCert` — automatic certificate assembly
-- `auto_safe_stable_controllable` — the capstone theorem applied
-- Decay-rate, safety, and controllability extractors
-
-### Linear Heat Equation (§8 of the manuscript)
-
-`Example_LinearHeatEquation.lean` instantiates SIARC for the scalar heat
-equation with zero coupling, validating that the framework is not specific
-to the thermoelastic model.
-
----
-
-## Reproducibility Table
+## Reproducibility
 
 | Item | Value |
 |------|-------|
 | Lean version | v4.14.0 (pinned in `lean-toolchain`) |
 | Mathlib4 version | v4.14.0 (pinned in `lakefile.lean`) |
 | Build system | Lake (ships with Lean 4) |
+| OS tested | Windows 11 |
 | Full build | `lake exe cache get && lake build` |
 | Trusted core only | `lake build SIARCRelay11TrustedCore` |
 | Expected errors | 0 |
@@ -197,13 +204,51 @@ to the thermoelastic model.
 | `hypothesis` | 2 | \|κ\| · 0.02 < 0.1, \|κ\| < 1 |
 | **Total** | **20** | |
 
+### Expected Build Output
+
+A successful build completes with no errors. The only `sorry` warnings
+appear in infrastructure files (`Operators.lean`, `Control.lean`,
+`LocalWellPosedness.lean`) — these are documented PDE placeholders
+that do not affect the trusted theorem layer.
+
+---
+
+## Examples
+
+### Thermoelastic System (§6–7 of the manuscript)
+
+`Example_ThermoelasticAutoVerify.lean` demonstrates the full SIARC pipeline:
+- `autoParams` — automatic parameter construction
+- `autoMasterCert` — automatic certificate assembly
+- `auto_safe_stable_controllable` — the capstone theorem applied
+- Decay-rate, safety, and controllability extractors
+
+### Linear Heat Equation (§8 of the manuscript)
+
+`Example_LinearHeatEquation.lean` instantiates SIARC for the scalar heat
+equation with zero coupling, validating that the framework is not specific
+to the thermoelastic model.
+
+---
+
+## Artifact Versioning
+
+| Version | Location | Purpose |
+|---------|----------|---------|
+| GitHub [v1.0.0](https://github.com/papanokechi/siarc-lean4/releases/tag/v1.0.0) | GitHub release | Development + browsing |
+| Zenodo [doi:10.5281/zenodo.19641981](https://doi.org/10.5281/zenodo.19641981) | Archival snapshot | **JAR submission reference** |
+
+The Zenodo archive is the archival version cited in the manuscript and used
+for JAR review. The GitHub repository may receive updates after publication.
+
 ---
 
 ## AI Disclosure
 
 **AI-Assistance Statement.**
 This work made use of AI tools (GitHub Copilot for Lean 4 code completion
-and Anthropic Claude for research assistance). All proofs and numerical
+and Anthropic Claude for research assistance) for editing, refactoring,
+and documentation — not for generating proofs. All proofs and numerical
 results were independently verified by the author. The full artifact is
 available at: https://github.com/papanokechi/siarc-lean4
 
