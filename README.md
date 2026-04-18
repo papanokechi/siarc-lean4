@@ -12,7 +12,7 @@ for coupled semilinear parabolic PDE-ODE systems.
 
 > **Paper:** *SIARC: A Mechanized Safety–Stability–Controllability Framework
 > for Semilinear Parabolic PDE Systems in Lean 4*
-> — Shunsuke Kubota (2026). Under review at JAR.
+> — papanokechi (2026). Under review at JAR.
 >
 > **Zenodo archive:** [doi:10.5281/zenodo.19641981](https://doi.org/10.5281/zenodo.19641981)
 
@@ -212,8 +212,8 @@ available at: https://github.com/papanokechi/siarc-lean4
 ## How to Cite
 
 ```bibtex
-@software{kubota_siarc_2026,
-  author       = {Kubota, Shunsuke},
+@software{papanokechi_siarc_2026,
+  author       = {papanokechi},
   title        = {{SIARC: A Mechanized Safety--Stability--Controllability
                    Framework for Semilinear Parabolic PDE Systems in Lean 4}},
   year         = {2026},

@@ -322,7 +322,7 @@ Relay 23 made seven improvements targeting review-readiness:
 ## How to Cite
 
 ```
-Kubota, Shunsuke. (2026). SIARC: A Mechanized Safety–Stability–Controllability
+papanokechi. (2026). SIARC: A Mechanized Safety–Stability–Controllability
 Framework for Semilinear Parabolic PDE Systems in Lean 4 (v1.0.0). Zenodo.
 https://doi.org/10.5281/zenodo.19641981
 ```
