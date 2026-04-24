@@ -6,7 +6,7 @@ import Lake
 open Lake DSL
 
 package «siarc-lean4» where
-  version := "1.0.0"
+  version := v!"1.0.0"
 
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4" @ "v4.14.0"
