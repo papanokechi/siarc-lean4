@@ -1,11 +1,12 @@
 /-!
 # SIARCRelay11.Control — Control Law Typeclass and Admissibility
 
-**⚠ OUTSIDE TRUSTED CORE — contains 1 sorry (Relay 22 boundary).**
+**⚠ OUTSIDE TRUSTED CORE — 0 sorry (Relay 24: converted to opaque).**
 
 This file contains the controlled-evolution definition, which requires
-solving the closed-loop PDE-ODE system. The `sorry` is a structural
-placeholder that does not affect the trusted theorem layer.
+solving the closed-loop PDE-ODE system. The controlled evolution is
+declared `opaque` as a structural placeholder that does not affect
+the trusted theorem layer.
 
 See `SIARCRelay11/TrustedBoundary.lean` for the formal soundness argument.
 
@@ -81,15 +82,14 @@ opaque intentPolicy (I : IntentSpace) : I.carrier → IntentMode
 -- ============================================================
 
 /-- evolutionMap_controlled: evolution under a given control law.
-    Relay 13 must replace with actual controlled PDE solution. -/
-noncomputable def evolutionMap_controlled
+    Relay 24: opaque — body requires solving closed-loop PDE-ODE system. -/
+opaque evolutionMap_controlled
     (m : ℕ) (t : ℝ) (_ht : t ≥ 0)
     (F : FieldSpace) (T : ThermalSpace) (S : StructuralSpace)
     [NormedAddCommGroup F.carrier] [NormedSpace ℝ F.carrier] [CompleteSpace F.carrier]
     [NormedAddCommGroup T.carrier] [NormedSpace ℝ T.carrier] [CompleteSpace T.carrier]
     [NormedAddCommGroup S.carrier] [NormedSpace ℝ S.carrier] [CompleteSpace S.carrier]
     (_cl : ControlLaw m F T S)
-    (σ₀ : StateSpace F T S) : StateSpace F T S :=
-  sorry  -- Relay 13: integrate controlled system
+    (σ₀ : StateSpace F T S) : StateSpace F T S
 
 end SIARCRelay11

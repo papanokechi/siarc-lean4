@@ -33,17 +33,29 @@ One-screenful summary of the SIARC mechanization.
 - `unique_minimizer_of_coercive_strictly_convex` — unused; HUM uses density directly
 - `euler_lagrange_optimal_control` — unused; HUM uses density directly
 
-### Axiom count: **9** (6 system-specific + 3 utility)
+### Axiom count: **11** (6 system-specific + 3 utility + 2 infrastructure)
+### Opaque count: **5** infrastructure opaque definitions (evolution components + controlled evolution)
 ### Theorem count: **2** utility axioms discharged (Relay 18)
-### Sorry status: **0** in all theorem files
+### Sorry status: **0** in all files (including infrastructure)
 
-### Infrastructure sorry status (Relay 22)
-| File | Before | After | Notes |
-|------|--------|-------|-------|
-| StateSpace.lean | 2 | **0** | Product norm instances discharged |
-| LocalWellPosedness.lean | 1 | **0** | Uniqueness discharged (ODE constraint fix) |
-| Operators.lean | 6 | 6 | Blocked: needs PDE semigroup bodies |
-| Control.lean | 1 | 1 | Blocked: needs controlled PDE solution |
+### Infrastructure conversion status (Relay 24)
+| File | Sorrys Before | Sorrys After | Conversion |
+|------|--------------|-------------|------------|
+| StateSpace.lean | 2 | **0** | Product norm instances discharged (Relay 21) |
+| LocalWellPosedness.lean | 1 | **0** | Uniqueness discharged (Relay 22) |
+| Operators.lean | 6 | **0** | 4 def→opaque + 2 theorem→axiom (Relay 24) |
+| Control.lean | 1 | **0** | 1 def→opaque (Relay 24) |
+
+### New infrastructure declarations (Relay 24)
+| # | Name | File | Type | Justification | Mathlib4 Status |
+|---|------|------|------|---------------|------------------|
+| I1 | `evolution_F` | Operators.lean | opaque | C₀-semigroup gen. (Hille-Yosida) | Pending: C₀Semigroup |
+| I2 | `evolution_θ` | Operators.lean | opaque | Duhamel integral + thermal semigroup | Pending: C₀Semigroup |
+| I3 | `evolution_s` | Operators.lean | opaque | Structural semigroup + thermal coupling | Pending: C₀Semigroup |
+| I4 | `evolution_c` | Operators.lean | opaque | Picard–Lindelöf iteration | Partial: `Analysis.ODE.Gronwall` |
+| I5 | `evolutionMap_semigroup` | Operators.lean | axiom | Semigroup composition law | Pending: C₀Semigroup |
+| I6 | `evolutionMap_zero` | Operators.lean | axiom | Semigroup identity S(0) = id | Pending: C₀Semigroup |
+| I7 | `evolutionMap_controlled` | Control.lean | opaque | Closed-loop PDE-ODE solution | Pending: controlled evolution |
 -/
 
 import SIARCRelay11.Theorems.Controllability

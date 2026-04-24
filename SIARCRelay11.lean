@@ -74,12 +74,12 @@ and dependency graph.
 
 ## Sorry status: **0** in all theorem files
 
-## Trusted core boundary (Relay 22)
+## Architecture (Relay 24)
 
-The project is split into a **trusted core** (sorry-free) and
-**untrusted infrastructure** (7 sorry, all PDE-semigroup placeholders).
-See `SIARCRelay11/TrustedBoundary.lean` for the formal separation,
-soundness argument, and sorry inventory.
+The project is split into a **trusted core** (sorry-free theorem layer) and
+**infrastructure layer** (0 sorry — uses opaque/axiom declarations for PDE-semigroup
+placeholders). See `SIARCRelay11/TrustedBoundary.lean` for the formal separation,
+soundness argument, and declaration inventory.
 
 ## File structure
 
@@ -102,9 +102,9 @@ SIARCRelay11/
 │ ├── AxiomInventory.lean                                    │
 │ └── LocalWellPosedness.lean    ← sorry-free (R22)           │
 └──────────────────────────────────────────────────┘
-┌────── UNTRUSTED INFRASTRUCTURE (7 sorry) ─────┐
-│ Operators.lean                      ← 6 sorry (PDE bodies)  │
-│ Control.lean                        ← 1 sorry (ctrl evol)   │
+┌────── INFRASTRUCTURE (0 sorry — opaque/axiom) ───┐
+│ Operators.lean                      ← 4 opaque + 2 axiom    │
+│ Control.lean                        ← 1 opaque              │
 └──────────────────────────────────────────────────┘
 Examples/
 ├── Example_Minimal.lean            ← how to use the API
