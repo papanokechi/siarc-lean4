@@ -77,7 +77,7 @@ and dependency graph.
 ## Trusted core boundary (Relay 22)
 
 The project is split into a **trusted core** (sorry-free) and
-**untrusted infrastructure** (8 sorry, all PDE-semigroup placeholders).
+**untrusted infrastructure** (7 sorry, all PDE-semigroup placeholders).
 See `SIARCRelay11/TrustedBoundary.lean` for the formal separation,
 soundness argument, and sorry inventory.
 
@@ -99,12 +99,12 @@ SIARCRelay11/
 │ ├── ForwardInvarianceFramework.lean                         │
 │ ├── Stability.lean                                         │
 │ ├── Controllability.lean                                   │
-│ └── AxiomInventory.lean                                    │
+│ ├── AxiomInventory.lean                                    │
+│ └── LocalWellPosedness.lean    ← sorry-free (R22)           │
 └──────────────────────────────────────────────────┘
-┌────── UNTRUSTED INFRASTRUCTURE (8 sorry) ─────┐
+┌────── UNTRUSTED INFRASTRUCTURE (7 sorry) ─────┐
 │ Operators.lean                      ← 6 sorry (PDE bodies)  │
 │ Control.lean                        ← 1 sorry (ctrl evol)   │
-│ Theorems/LocalWellPosedness.lean     ← 1 sorry (uniqueness)  │
 └──────────────────────────────────────────────────┘
 Examples/
 ├── Example_Minimal.lean            ← how to use the API

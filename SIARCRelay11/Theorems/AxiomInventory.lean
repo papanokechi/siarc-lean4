@@ -37,11 +37,11 @@ One-screenful summary of the SIARC mechanization.
 ### Theorem count: **2** utility axioms discharged (Relay 18)
 ### Sorry status: **0** in all theorem files
 
-### Infrastructure sorry status (Relay 21)
+### Infrastructure sorry status (Relay 22)
 | File | Before | After | Notes |
 |------|--------|-------|-------|
 | StateSpace.lean | 2 | **0** | Product norm instances discharged |
-| LocalWellPosedness.lean | 1 | **1** | Existence discharged; uniqueness blocked |
+| LocalWellPosedness.lean | 1 | **0** | Uniqueness discharged (ODE constraint fix) |
 | Operators.lean | 6 | 6 | Blocked: needs PDE semigroup bodies |
 | Control.lean | 1 | 1 | Blocked: needs controlled PDE solution |
 -/

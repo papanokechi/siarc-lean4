@@ -28,7 +28,7 @@ introduce logical inconsistency** into the trusted theorems. The
 axioms about `evolutionMap` (field contraction, thermal bound, etc.)
 are the sole interface, and they are explicitly listed in `SystemAxioms`.
 
-## Relay 22: No new axioms. No new sorry. Architecture only.
+## Relay 22: No new axioms. 1 sorry discharged (LWP uniqueness). Architecture update.
 
 ## Files in each zone
 
@@ -41,12 +41,12 @@ are the sole interface, and they are explicitly listed in `SystemAxioms`.
 - `API.lean`
 - `TrustedBoundary.lean` (this file)
 - `StateSpace.lean` (Relay 21: sorry-free)
+- `Theorems/LocalWellPosedness.lean` (Relay 22: sorry discharged, not in certificate chain)
 - `Axioms.lean`, `Parameters.lean`, `Barriers.lean`, `Bundles.lean`
 
-### Untrusted Infrastructure (8 sorry)
+### Untrusted Infrastructure (7 sorry)
 - `Operators.lean` — 6 sorry (evolution bodies + semigroup properties)
 - `Control.lean` — 1 sorry (controlled evolution body)
-- `Theorems/LocalWellPosedness.lean` — 1 sorry (uniqueness clause)
 
 ### Examples (sorry by design — user-fillable templates)
 - `Examples/Example_PhysicalSystem.lean` — 6 sorry (template)
@@ -168,11 +168,10 @@ structure InfrastructureSorryInventory where
   identity_law : Unit := ()
   /-- `Control.lean:85` — `evolutionMap_controlled` (controlled evolution) -/
   controlled_evolution : Unit := ()
-  /-- `LocalWellPosedness.lean:94` — uniqueness clause (statement-level issue) -/
-  lwp_uniqueness : Unit := ()
+  -- Relay 22: lwp_uniqueness discharged (ODE constraint added to statement)
 
 /-- The total number of infrastructure sorry's. -/
-def InfrastructureSorryInventory.total : Nat := 8
+def InfrastructureSorryInventory.total : Nat := 7
 
 /-- The theorem layer has zero sorry's. -/
 theorem theorem_layer_sorry_free : True := trivial
@@ -200,9 +199,9 @@ These axioms are **interface specifications** for `evolutionMap`. The sorry'd
 bodies provide *one possible implementation* (currently a placeholder), but
 the theorems hold for *any* implementation satisfying the axioms.
 
-The `LocalWellPosedness` sorry (uniqueness clause) is in a file that is
-**not imported** by the certificate chain. It is a standalone result that
-does not affect safety/stability/controllability.
+The `LocalWellPosedness` file (uniqueness clause) is not imported by the
+certificate chain. Its sorry was discharged in Relay 22 by adding an ODE
+constraint on σ' and using the `evolutionMap` witness.
 
 **Conclusion:** The infrastructure sorry's cannot introduce inconsistency
 into the trusted theorems. The axioms are the sole trust boundary. -/
@@ -225,13 +224,14 @@ def trustedFiles : List String :=
   , "SIARCRelay11/Theorems/AxiomInventory.lean"
   , "SIARCRelay11/API.lean"
   , "SIARCRelay11/TrustedBoundary.lean"
+  , "SIARCRelay11/Theorems/LocalWellPosedness.lean"  -- Relay 22: 0 sorry
   ]
 
 /-- List of files in the untrusted infrastructure (contain sorry). -/
 def untrustedFiles : List String :=
   [ "SIARCRelay11/Operators.lean    -- 6 sorry (evolution bodies + properties)"
   , "SIARCRelay11/Control.lean      -- 1 sorry (controlled evolution)"
-  , "SIARCRelay11/Theorems/LocalWellPosedness.lean -- 1 sorry (uniqueness)"
+  -- Relay 22: LocalWellPosedness.lean moved to trusted (0 sorry)
   ]
 
 /-- **Axiom count summary.** -/
