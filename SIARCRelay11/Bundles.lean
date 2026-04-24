@@ -1,3 +1,7 @@
+import Mathlib.Topology.FiberBundle.Basic
+import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
+import SIARCRelay11.StateSpace
+
 /-!
 # SIARCRelay11.Bundles — Fiber Bundle Structures over M
 
@@ -20,9 +24,6 @@ the geometric foundation for interpreting StateSpace elements as global sections
 - Prove sections_are_banach using compact M + C⁰ norm argument
 -/
 
-import Mathlib.Topology.FiberBundle.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import SIARCRelay11.StateSpace
 
 namespace SIARCRelay11
 

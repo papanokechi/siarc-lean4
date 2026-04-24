@@ -1,3 +1,5 @@
+import SIARCRelay11.Theorems.AxiomInventory
+
 /-!
 # SIARCRelay11 Public API
 
@@ -50,7 +52,6 @@ AxiomInventory).
 > See `ARTIFACT.md` for the full replay recipe and axiom inventory.
 -/
 
-import SIARCRelay11.Theorems.AxiomInventory
 
 /-! ## Re-exports: Public API -/
 

@@ -1,3 +1,5 @@
+import SIARCRelay11.Examples.Example_ThermoelasticSystem
+
 /-!
 # Example: Numerical Thermoelastic Parameters
 
@@ -36,7 +38,6 @@ axioms from `Example_ThermoelasticSystem.lean` (which in turn use
 the 6 system-specific axioms + thermoelastic infrastructure axioms).
 -/
 
-import SIARCRelay11.Examples.Example_ThermoelasticSystem
 
 open SIARCRelay11
 open SIARCRelay11.Examples.Thermoelastic

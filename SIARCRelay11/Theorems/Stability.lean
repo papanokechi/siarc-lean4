@@ -1,3 +1,8 @@
+import Mathlib.Analysis.NormedSpace.Basic
+import SIARCRelay11.StateSpace
+import SIARCRelay11.Operators
+import SIARCRelay11.Theorems.ForwardInvarianceFramework
+
 /-!
 # SIARCRelay11.Theorems.Stability — Local Exponential Stability on the Safe Set
 
@@ -42,10 +47,6 @@ Mathematical utilities (not system-specific):
 - SIARCRelay11.Parameters (κ, κ_safe)
 -/
 
-import Mathlib.Analysis.NormedSpace.Basic
-import SIARCRelay11.StateSpace
-import SIARCRelay11.Operators
-import SIARCRelay11.Theorems.ForwardInvarianceFramework
 
 namespace SIARCRelay11.Theorems
 

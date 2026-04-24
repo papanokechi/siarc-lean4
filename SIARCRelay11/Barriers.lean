@@ -1,3 +1,9 @@
+import Mathlib.Analysis.NormedSpace.Basic
+import Mathlib.Topology.Algebra.Module.Basic
+import SIARCRelay11.StateSpace
+import SIARCRelay11.Axioms
+import SIARCRelay11.Parameters
+
 /-!
 # SIARCRelay11.Barriers — Barrier Functions and Safe-Set Predicates
 
@@ -17,11 +23,6 @@ predicate, the computable `InSafe` predicate, and the curvature-based proxy
 - SIARCRelay11.Parameters
 -/
 
-import Mathlib.Analysis.NormedSpace.Basic
-import Mathlib.Topology.Algebra.Module.Basic
-import SIARCRelay11.StateSpace
-import SIARCRelay11.Axioms
-import SIARCRelay11.Parameters
 
 namespace SIARCRelay11
 

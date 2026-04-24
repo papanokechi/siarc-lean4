@@ -1,3 +1,8 @@
+import Mathlib.Analysis.ODE.Gronwall
+import Mathlib.Analysis.NormedSpace.Basic
+import SIARCRelay11.StateSpace
+import SIARCRelay11.Operators
+
 /-!
 # SIARCRelay11.Theorems.LocalWellPosedness — Local Well-Posedness of the Coupled System
 
@@ -36,10 +41,6 @@ system. Uses the parabolicity/ellipticity typeclasses from Operators.lean.
 4. Uniqueness follows from the contraction estimate.
 -/
 
-import Mathlib.Analysis.ODE.Gronwall
-import Mathlib.Analysis.NormedSpace.Basic
-import SIARCRelay11.StateSpace
-import SIARCRelay11.Operators
 
 namespace SIARCRelay11.Theorems
 

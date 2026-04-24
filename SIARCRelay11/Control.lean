@@ -1,3 +1,8 @@
+import Mathlib.Analysis.NormedSpace.Basic
+import Mathlib.Topology.Basic
+import SIARCRelay11.StateSpace
+import SIARCRelay11.Axioms
+
 /-!
 # SIARCRelay11.Control — Control Law Typeclass and Admissibility
 
@@ -28,11 +33,6 @@ mode selection, and the controlled evolution map stub.
 - Prove closed-loop well-posedness of evolutionMap_controlled
 - Add observability and separation principle for output feedback
 -/
-
-import Mathlib.Analysis.NormedSpace.Basic
-import Mathlib.Topology.Basic
-import SIARCRelay11.StateSpace
-import SIARCRelay11.Axioms
 
 namespace SIARCRelay11
 

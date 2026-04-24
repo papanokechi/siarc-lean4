@@ -1,3 +1,8 @@
+import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
+import Mathlib.Analysis.InnerProductSpace.Basic
+import Mathlib.Topology.FiberBundle.Basic
+import Mathlib.Analysis.NormedSpace.Basic
+
 /-!
 # SIARCRelay11.StateSpace — Type Definitions for the Full State Space Hierarchy
 
@@ -19,10 +24,6 @@ SafeManifold invariant subset.
 - 0 sorry remaining in this file
 -/
 
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import Mathlib.Analysis.InnerProductSpace.Basic
-import Mathlib.Topology.FiberBundle.Basic
-import Mathlib.Analysis.NormedSpace.Basic
 
 namespace SIARCRelay11
 

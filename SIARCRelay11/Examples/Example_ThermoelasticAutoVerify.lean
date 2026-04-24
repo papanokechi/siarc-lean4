@@ -1,3 +1,5 @@
+import SIARCRelay11.Examples.Example_ThermoelasticSystem
+
 /-!
 # Example: Automated Numerical Verification of Thermoelastic Parameters
 
@@ -26,7 +28,6 @@ that the coupling constant κ is small enough for stability.
 from Relay 17 and the numerical parameters from Relay 19A.
 -/
 
-import SIARCRelay11.Examples.Example_ThermoelasticSystem
 
 open SIARCRelay11
 open SIARCRelay11.Examples.Thermoelastic

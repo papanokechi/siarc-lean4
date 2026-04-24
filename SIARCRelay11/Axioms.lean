@@ -1,3 +1,6 @@
+import Mathlib.Topology.Basic
+import Mathlib.Topology.Algebra.Module.Basic
+
 /-!
 # SIARCRelay11.Axioms — Mechanized Obstacles
 
@@ -21,8 +24,6 @@ Encodes the principal mathematical blockers identified in Relay 10.
 - Replace A3 with a concrete LQR or MPC control law
 -/
 
-import Mathlib.Topology.Basic
-import Mathlib.Topology.Algebra.Module.Basic
 
 namespace SIARCRelay11
 

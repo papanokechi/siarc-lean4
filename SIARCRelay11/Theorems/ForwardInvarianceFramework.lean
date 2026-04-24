@@ -1,3 +1,8 @@
+import SIARCRelay11.Theorems.Invariance
+import SIARCRelay11.Barriers
+import SIARCRelay11.Operators
+import SIARCRelay11.Parameters
+
 /-!
 # SIARCRelay11.Theorems.ForwardInvarianceFramework — Abstract Invariance & Safety Certificate
 
@@ -47,10 +52,6 @@ Downstream relays import `SafetyCertificate` as a single opaque object.
 - SIARCRelay11.Parameters (κ, κ_safe, CouplingThresholds)
 -/
 
-import SIARCRelay11.Theorems.Invariance
-import SIARCRelay11.Barriers
-import SIARCRelay11.Operators
-import SIARCRelay11.Parameters
 
 namespace SIARCRelay11.Theorems
 

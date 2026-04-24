@@ -1,3 +1,5 @@
+import SIARCRelay11.API
+
 /-!
 # Example: Thermoelastic System — Concrete PDE Instantiation
 
@@ -30,7 +32,6 @@ become a `theorem` once the relevant Mathlib / PDE theory is available.
 - [Lions 1988] Contrôlabilité exacte, Thm 1.3 (HUM)
 -/
 
-import SIARCRelay11.API
 
 open SIARCRelay11
 

@@ -1,3 +1,11 @@
+import Mathlib.Analysis.NormedSpace.Basic
+import Mathlib.Topology.Basic
+import SIARCRelay11.StateSpace
+import SIARCRelay11.Operators
+import SIARCRelay11.Axioms
+import SIARCRelay11.Theorems.ForwardInvarianceFramework
+import SIARCRelay11.Theorems.Stability
+
 /-!
 # SIARCRelay11.Theorems.Controllability — Approximate Controllability via HUM
 
@@ -50,13 +58,6 @@ Key result (Relay 13+ target): UCP ⟹ J is coercive ⟹ minimizer exists
 - SIARCRelay11.Parameters (κ)
 -/
 
-import Mathlib.Analysis.NormedSpace.Basic
-import Mathlib.Topology.Basic
-import SIARCRelay11.StateSpace
-import SIARCRelay11.Operators
-import SIARCRelay11.Axioms
-import SIARCRelay11.Theorems.ForwardInvarianceFramework
-import SIARCRelay11.Theorems.Stability
 
 namespace SIARCRelay11.Theorems
 

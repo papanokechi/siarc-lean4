@@ -1,3 +1,5 @@
+import SIARCRelay11.API
+
 /-!
 # Replay: Master Certificate Smoke Test
 
@@ -16,7 +18,6 @@ No `sorry` should appear in the output.
 5. Key sub-certificates are extractable from the master certificate.
 -/
 
-import SIARCRelay11.API
 
 open SIARCRelay11
 

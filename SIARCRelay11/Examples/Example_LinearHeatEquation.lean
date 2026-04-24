@@ -1,3 +1,5 @@
+import SIARCRelay11.API
+
 /-!
 # Example: Linear Heat Equation — Minimal Cross-Validation
 
@@ -34,7 +36,6 @@ produces verified guarantees for a qualitatively different PDE system.
 ## Relay 23: No new axioms. No new sorry. Example only.
 -/
 
-import SIARCRelay11.API
 
 open SIARCRelay11
 
