@@ -1,3 +1,5 @@
+import SIARCRelay11.API
+
 /-!
 # SIARCRelay11.TrustedBoundary — Trusted Core Separation
 
@@ -54,7 +56,6 @@ are the sole interface, and they are explicitly listed in `SystemAxioms`.
 - `Examples/Example_PhysicalSystem.lean` — 6 sorry (template)
 -/
 
-import SIARCRelay11.API
 
 namespace SIARCRelay11.TrustedCore
 

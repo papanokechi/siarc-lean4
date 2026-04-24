@@ -1,3 +1,5 @@
+import SIARCRelay11.API
+
 /-!
 # Example: Minimal instantiation of `SystemAxioms`
 
@@ -9,7 +11,6 @@ This is a *template* — for a real physical system, replace
 `SystemAxioms.standard` with axioms proved for your PDE system.
 -/
 
-import SIARCRelay11.API
 
 open SIARCRelay11
 

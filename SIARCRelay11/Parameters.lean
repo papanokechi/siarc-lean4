@@ -1,3 +1,6 @@
+import Mathlib.Analysis.NormedSpace.Basic
+import Mathlib.Topology.Basic
+
 /-!
 # SIARCRelay11.Parameters — Global Coupling Threshold and Operator Hypotheses
 
@@ -21,8 +24,6 @@ elasticity), and safe-control constraints. This replaces the vague Axiom A2
   κ₅* = σ_yield / (C_VM · ‖A₃⁻¹‖ · ‖C₂₃‖ · C_par · ‖σ₂(0)‖)
 -/
 
-import Mathlib.Analysis.NormedSpace.Basic
-import Mathlib.Topology.Basic
 
 namespace SIARCRelay11
 

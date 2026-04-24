@@ -1,3 +1,5 @@
+import SIARCRelay11.Theorems.Controllability
+
 /-!
 # SIARCRelay11.Theorems.AxiomInventory — Global Audit and Public API
 
@@ -58,7 +60,6 @@ One-screenful summary of the SIARC mechanization.
 | I7 | `evolutionMap_controlled` | Control.lean | opaque | Closed-loop PDE-ODE solution | Pending: controlled evolution |
 -/
 
-import SIARCRelay11.Theorems.Controllability
 
 namespace SIARCRelay11.Theorems
 

@@ -1,3 +1,5 @@
+import SIARCRelay11.API
+
 /-!
 # Example: Template for a physical PDE system
 
@@ -15,7 +17,6 @@ with proofs specific to your PDE system.
 5. Apply `master_certificate_summary` to get all four guarantees.
 -/
 
-import SIARCRelay11.API
 
 open SIARCRelay11
 

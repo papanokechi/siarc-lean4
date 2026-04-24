@@ -1,3 +1,5 @@
+import SIARCRelay11.Theorems.AxiomInventory
+
 /-!
 # SIARCRelay11.TrustedCore — Minimal Public Interface
 
@@ -21,7 +23,6 @@ entire verified chain but exposes only the top-level interface.
 ## Relay 23: No new axioms. No new sorry. Architecture only.
 -/
 
-import SIARCRelay11.Theorems.AxiomInventory
 
 namespace SIARCRelay11.TrustedCore
 

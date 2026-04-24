@@ -1,3 +1,8 @@
+import Mathlib.Analysis.NormedSpace.Basic
+import Mathlib.Analysis.NormedSpace.OperatorNorm.Basic
+import Mathlib.Analysis.ODE.Gronwall
+import SIARCRelay11.StateSpace
+
 /-!
 # SIARCRelay11.Operators — PDE/ODE Operator Signatures and Evolution Map
 
@@ -30,11 +35,6 @@ HasDeTurckGauge), and the modular evolution map components.
 - Prove semigroup property of evolutionMap from component properties
 - Add spectral gap computation for the linearized operator
 -/
-
-import Mathlib.Analysis.NormedSpace.Basic
-import Mathlib.Analysis.NormedSpace.OperatorNorm.Basic
-import Mathlib.Analysis.ODE.Gronwall
-import SIARCRelay11.StateSpace
 
 namespace SIARCRelay11
 
