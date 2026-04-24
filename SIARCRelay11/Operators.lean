@@ -1,4 +1,4 @@
-import Mathlib.Analysis.NormedSpace.Basic
+import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Analysis.NormedSpace.OperatorNorm.Basic
 import Mathlib.Analysis.ODE.Gronwall
 import SIARCRelay11.StateSpace

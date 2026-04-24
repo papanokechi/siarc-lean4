@@ -1,7 +1,7 @@
 import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.Topology.FiberBundle.Basic
-import Mathlib.Analysis.NormedSpace.Basic
+import Mathlib.Analysis.Normed.Module.Basic
 
 /-!
 # SIARCRelay11.StateSpace — Type Definitions for the Full State Space Hierarchy
