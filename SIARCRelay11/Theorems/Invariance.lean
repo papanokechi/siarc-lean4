@@ -1,3 +1,9 @@
+import Mathlib.Analysis.Normed.Module.Basic
+import SIARCRelay11.StateSpace
+import SIARCRelay11.Barriers
+import SIARCRelay11.Operators
+import SIARCRelay11.Parameters
+
 /-!
 # SIARCRelay11.Theorems.Invariance — SafeManifold Forward Invariance
 
@@ -11,12 +17,7 @@ assembly proof and created `ForwardInvarianceFramework.lean` with:
 
 This file retains the individual barrier invariance lemmas and the concrete
 `safe_manifold_invariance` theorem. The abstract version lives in the framework.
-
-import Mathlib.Analysis.NormedSpace.Basic
-import SIARCRelay11.StateSpace
-import SIARCRelay11.Barriers
-import SIARCRelay11.Operators
-import SIARCRelay11.Parameters
+-/
 
 namespace SIARCRelay11.Theorems
 

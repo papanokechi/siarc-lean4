@@ -1,4 +1,4 @@
-import Mathlib.Analysis.NormedSpace.Basic
+import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.Basic
 import SIARCRelay11.StateSpace
 import SIARCRelay11.Operators
@@ -458,6 +458,8 @@ lemma coercivity_from_observability
 /-- **Step 3: Unique minimizer of coercive strictly convex functional.**
 
     On a Hilbert space, a coercive strictly convex lower-semicontinuous
+    functional has a unique minimizer. (REMOVED — Relay 23) -/
+
 /-! ### Step 3: Unique minimizer — REMOVED (Relay 23)
 
     Previously axiomatized as `unique_minimizer_of_coercive_strictly_convex`.

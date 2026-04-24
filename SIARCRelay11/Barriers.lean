@@ -1,4 +1,4 @@
-import Mathlib.Analysis.NormedSpace.Basic
+import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.Algebra.Module.Basic
 import SIARCRelay11.StateSpace
 import SIARCRelay11.Axioms
